@@ -139,12 +139,7 @@ export default function HomeScreen() {
             </View>
 
             <Pressable
-              onPress={() =>
-                Alert.alert(
-                  'Zdjęcie',
-                  'Wybór zdjęcia z galerii dodamy później.',
-                )
-              }
+              onPress={() => router.replace('/memory-prompt')}
             >
               <Text style={styles.changePhoto}>▧  Zmień</Text>
             </Pressable>

@@ -1,4 +1,5 @@
 
+import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import {
   Image,
@@ -49,14 +50,30 @@ export default function HomeScreen() {
             <Text style={styles.brandName}>blisko</Text>
           </View>
 
-        <Pressable
-          style={styles.profileButton}
-          onPress={() => {
-            // Tutaj później dodamy przejście do profilu.
-          }}
-        >
-          <Text style={styles.profileInitial}>P</Text>
-        </Pressable>
+          <View style={styles.headerActions}>
+            {/* Dzwoneczek */}
+            <Pressable
+              style={styles.notificationButton}
+              onPress={() => router.push('/reminders')}
+            >
+              <Ionicons
+                name="notifications-outline"
+                size={24}
+                color="#414e3d"
+              />
+              <View style={styles.notificationDot} />
+            </Pressable>
+
+            {/* Profil */}
+            <Pressable
+              style={styles.profileButton}
+              onPress={() => {
+                // Tutaj później dodamy przejście do profilu.
+              }}
+            >
+              <Text style={styles.profileInitial}>P</Text>
+            </Pressable>
+          </View>
         </View>
 
         {/* Powitanie */}
@@ -368,4 +385,30 @@ const styles = StyleSheet.create({
     color: '#D66C7B',
     fontWeight: '600',
   },
+  headerActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+
+  notificationButton: {
+    width: 44,
+    height: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+  },
+
+  notificationDot: {
+    position: 'absolute',
+    top: 8,
+    right: 9,
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: '#c66b52',
+    borderWidth: 1,
+    borderColor: '#fcfaf6',
+  },
+
 });

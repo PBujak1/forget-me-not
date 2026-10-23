@@ -1,4 +1,3 @@
-
 import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useColorScheme } from 'react-native';
@@ -15,9 +14,13 @@ export default function RootLayout() {
       <AnimatedSplashOverlay />
 
       <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="index" />
         <Stack.Screen name="new-memory" />
+        <Stack.Screen name="reminders" />
+        <Stack.Screen name="visibility" />
+        <Stack.Screen name="memory-prompt" />
       </Stack>
     </ThemeProvider>
   );
 }
+
